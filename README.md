@@ -1,0 +1,1 @@
+# Ansible - Novice Ansible labs
