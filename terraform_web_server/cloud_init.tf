@@ -1,5 +1,8 @@
 data "template_file" "user_data" {
   template = file("${path.module}/user_data.cfg")
+  vars = {
+    hostname = var.machine_name
+  }
 }
 
 data "template_file" "network_config" {
