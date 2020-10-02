@@ -8,7 +8,8 @@ variable "disk_size" {
 }
 
 variable "machine_name" {
-    default = "ubuntu_vm"
+    type = list(string)
+    default = ["ubuntu_vm"]
 }
 
 variable "vcpu" { 

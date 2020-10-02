@@ -1,12 +1,13 @@
 resource "libvirt_domain" "ubuntu_vm" {
-  name   = var.machine_name
+  count  = length(var.machine_name)
+  name   = var.machine_name[count.index]
   vcpu   = var.vcpu
   memory = var.memory
 
-  cloudinit = libvirt_cloudinit_disk.commoninit.id
+  cloudinit = libvirt_cloudinit_disk.commoninit[count.index].id
 
   disk {
-    volume_id = libvirt_volume.ubuntu_disk.id
+    volume_id = element(libvirt_volume.os_disk.*.id, count.index)
   }
 
   network_interface {
