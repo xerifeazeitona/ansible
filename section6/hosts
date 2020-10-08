@@ -1,5 +1,5 @@
 [web]
-web1 ansible_host=192.168.123.210
+web1 ansible_host=192.168.122.223
 
 [db]
 db1 ansible_host=192.168.123.66

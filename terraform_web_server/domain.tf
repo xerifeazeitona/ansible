@@ -11,7 +11,8 @@ resource "libvirt_domain" "ubuntu_vm" {
   }
 
   network_interface {
-    network_name = "default"
+#    network_name = "default"
+    network_name = "network"
     wait_for_lease = true
   }
   
